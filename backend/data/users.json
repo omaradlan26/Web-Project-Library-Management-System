@@ -38,5 +38,13 @@
     "name": "ali ahmed",
     "email": "",
     "role": "customer"
+  },
+  {
+    "id": "manager1",
+    "username": "manager",
+    "password": "manager123",
+    "role": "manager",
+    "name": "Manager User",
+    "email": "manager@library.com"
   }
 ]
