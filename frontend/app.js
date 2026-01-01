@@ -43,7 +43,7 @@ function getHeaders() {
     };
 }
 
-// ... Logout ...
+// Logout
 
 // Fetch Books with Search
 async function fetchBooks() {
@@ -101,7 +101,6 @@ function renderBooks(books) {
     });
 }
 
-// Add new book
 // Add new book
 if (addBookForm) {
     addBookForm.addEventListener('submit', async (e) => {
