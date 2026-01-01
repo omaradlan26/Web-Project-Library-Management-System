@@ -20,15 +20,21 @@
 
 <body>
     <header>
-        <div style="text-align: right; padding: 10px;">
-            <span id="userDisplay" style="margin-right: 10px; font-weight: bold;"></span>
-            <button onclick="logout()" class="btn btn-sm btn-danger">Logout</button>
+        <div class="topbar">
+            <div class="container topbar-inner">
+                <div class="brand">
+                    <h1>📚 Library Management System</h1>
+                </div>
+                <div class="user-actions">
+                    <span id="userDisplay" class="user-display"></span>
+                    <button onclick="logout()" class="btn btn-sm btn-danger">Logout</button>
+                </div>
+            </div>
         </div>
-        <div class="container">
-            <h1>📚 Library Management System</h1>
 
+        <div class="container">
             <!-- Navigation / Tabs -->
-            <div class="mb-3" id="adminNav" style="display:none;">
+            <div class="nav-tabs" id="adminNav" style="display:none;">
                 <button class="btn btn-primary" onclick="showSection('books')">Manage Books</button>
                 <button class="btn btn-secondary" onclick="showSection('customers')">Manage Customers</button>
             </div>
@@ -37,8 +43,8 @@
             <div class="card mb-4" id="searchSection">
                 <div class="card-body">
                     <h5>Search Books</h5>
-                    <div class="row">
-                        <div class="col-md-3">
+                    <div class="search-row">
+                        <div class="search-type">
                             <select id="searchType" class="form-control">
                                 <option value="">All Fields</option>
                                 <option value="id">ID</option>
@@ -47,10 +53,10 @@
                                 <option value="category">Category</option>
                             </select>
                         </div>
-                        <div class="col-md-7">
+                        <div class="search-input">
                             <input type="text" id="searchInput" class="form-control" placeholder="Search...">
                         </div>
-                        <div class="col-md-2">
+                        <div class="search-btn">
                             <button onclick="fetchBooks()" class="btn btn-info w-100">Search</button>
                         </div>
                     </div>

@@ -29,6 +29,30 @@ header {
   margin-bottom: 2rem;
 }
 
+.topbar {
+  background: linear-gradient(90deg, rgba(255,255,255,0.6), rgba(255,255,255,0.9));
+  border-bottom: 1px solid rgba(0,0,0,0.03);
+}
+
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 0;
+}
+
+.user-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.user-display {
+  font-weight: 600;
+  color: hsl(var(--text-main));
+}
+
 .container {
   max-width: 1000px;
   margin: 0 auto;
@@ -54,6 +78,26 @@ h2 {
   border-radius: var(--radius);
   box-shadow: var(--shadow-md);
   margin-bottom: 2rem;
+}
+
+.nav-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0 1.25rem 0;
+}
+
+.search-row {
+  display: grid;
+  grid-template-columns: 200px 1fr 120px;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.search-type select,
+.search-input input {
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  border: 1px solid hsl(var(--text-light));
 }
 
 /* Form Styles */
@@ -193,4 +237,13 @@ td {
     .container {
         padding: 0 1rem;
     }
+  .search-row {
+    grid-template-columns: 1fr;
+  }
+  .nav-tabs {
+    flex-wrap: wrap;
+  }
+  th, td {
+    padding: 0.75rem;
+  }
 }

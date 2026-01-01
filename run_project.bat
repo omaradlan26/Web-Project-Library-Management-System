@@ -29,7 +29,7 @@ echo.
 echo ===================================================
 echo   Application started!
 echo   Frontend: http://localhost:8081
-echo   Backend:  http://localhost:5001
+echo   Backend:  http://localhost:5002
 echo ===================================================
 echo.
 pause
