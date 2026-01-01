@@ -13,14 +13,15 @@ const user = JSON.parse(userStr || '{}');
 
 // Display User & Role Logic
 document.getElementById('userDisplay').textContent = `User: ${user.username} (${user.role})`;
+// Show nav and adjust visible controls based on role
+const adminNav = document.getElementById('adminNav');
+if (adminNav) adminNav.style.display = 'flex';
 
-// Show nav for everyone
-document.getElementById('adminNav').style.display = 'block';
-
-if (user.role === 'admin') {
-    // Admin specific UI tweaks if any
-} else {
-    // Customer
+const btnCustomers = document.getElementById('btnCustomers');
+const customersSection = document.getElementById('customersSection');
+if (user.role !== 'admin') {
+    if (btnCustomers) btnCustomers.remove();
+    if (customersSection) customersSection.remove();
 }
 
 function showSection(section) {
