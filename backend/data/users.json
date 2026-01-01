@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "username": "admin",
+    "password": "admin123",
+    "role": "admin",
+    "name": "Administrator",
+    "email": "admin@library.com"
+  },
+  {
+    "id": "3",
+    "username": "costumer",
+    "password": "costumer123",
+    "role": "customer",
+    "name": "Jane Smith",
+    "email": "jane@example.com"
+  },
+  {
+    "id": "1767107002226",
+    "username": "testuser",
+    "password": "pw",
+    "name": "Test User",
+    "email": "t@t.com",
+    "role": "customer"
+  },
+  {
+    "id": "1767107879694",
+    "username": "omar123",
+    "password": "123",
+    "name": "omar mohamed",
+    "email": "",
+    "role": "customer"
+  },
+  {
+    "id": "1767113361768",
+    "username": "aliahmed",
+    "password": "123",
+    "name": "ali ahmed",
+    "email": "",
+    "role": "customer"
+  }
+]
