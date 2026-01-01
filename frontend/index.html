@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Simple Tabs */
+        .btn-group {
+            margin-bottom: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div style="text-align: right; padding: 10px;">
+            <span id="userDisplay" style="margin-right: 10px; font-weight: bold;"></span>
+            <button onclick="logout()" class="btn btn-sm btn-danger">Logout</button>
+        </div>
+        <div class="container">
+            <h1>📚 Library Management System</h1>
+
+            <!-- Navigation / Tabs -->
+            <div class="mb-3" id="adminNav" style="display:none;">
+                <button class="btn btn-primary" onclick="showSection('books')">Manage Books</button>
+                <button class="btn btn-secondary" onclick="showSection('customers')">Manage Customers</button>
+            </div>
+
+            <!-- Search Section -->
+            <div class="card mb-4" id="searchSection">
+                <div class="card-body">
+                    <h5>Search Books</h5>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <select id="searchType" class="form-control">
+                                <option value="">All Fields</option>
+                                <option value="id">ID</option>
+                                <option value="title">Title</option>
+                                <option value="author">Author</option>
+                                <option value="category">Category</option>
+                            </select>
+                        </div>
+                        <div class="col-md-7">
+                            <input type="text" id="searchInput" class="form-control" placeholder="Search...">
+                        </div>
+                        <div class="col-md-2">
+                            <button onclick="fetchBooks()" class="btn btn-info w-100">Search</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- Books Section -->
+        <div id="booksSection">
+            <!-- Add Book Form -->
+            <section class="card mb-4" id="addBookCard">
+                <div class="card-header">Add New Book</div>
+                <div class="card-body">
+                    <form id="addBookForm">
+                        <div class="form-group mb-2">
+                            <label for="title">Book Title</label>
+                            <input type="text" id="title" class="form-control" placeholder="Enter book title" required>
+                        </div>
+                        <div class="form-group mb-2">
+                            <label for="author">Author</label>
+                            <input type="text" id="author" class="form-control" placeholder="Enter author name"
+                                required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Add Book</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Book Table -->
+            <section class="card">
+                <div class="card-header">Book Catalog</div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Author</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="bookList"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Customers Section -->
+        <div id="customersSection" style="display:none;">
+            <div class="card mb-4">
+                <div class="card-header">Add Customer</div>
+                <div class="card-body">
+                    <form id="addCustomerForm">
+                        <div class="row">
+                            <div class="col-md-3"><input type="text" id="c_username" class="form-control"
+                                    placeholder="Username" required></div>
+                            <div class="col-md-3"><input type="password" id="c_password" class="form-control"
+                                    placeholder="Password" required></div>
+                            <div class="col-md-3"><input type="text" id="c_name" class="form-control"
+                                    placeholder="Full Name" required></div>
+                            <div class="col-md-3"><button type="submit" class="btn btn-primary w-100">Add
+                                    Customer</button></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Username</th>
+                            <th>ID</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="customerList"></tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
